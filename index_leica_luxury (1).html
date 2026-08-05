@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dada Photography - Cinematic Travel Photography in Paris">
+    <title>Dada — Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 4rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 60px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #999;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: #777;
+            max-width: 600px;
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 1px solid #000;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #000;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 8rem 5%;
+        }
+
+        section h2 {
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #999;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #666;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            padding: 0;
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+            border-radius: 2px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-intro {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .portfolio-intro h3 {
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-intro p {
+            font-size: 1.1rem;
+            color: #777;
+        }
+
+        /* Gallery */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid #efefef;
+            transition: all 0.4s;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .gallery-item-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-label {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .gallery-location {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #fafafa;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .contact-value:hover {
+            color: #666;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #1a1a1a;
+            transition: border-color 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-button {
+            align-self: flex-start;
+            padding: 1rem 2rem;
+            background: #000;
+            color: #fff;
+            border: 1px solid #000;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .form-button:hover {
+            background: transparent;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5%;
+            border-top: 1px solid #efefef;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            font-size: 0.85rem;
+            color: #999;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 5%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            nav {
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">DADA</div>
+        <ul>
+            <li><a href="#home">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">Paris Travel Photography</div>
+            <h1>Cinematic Moments, Authentically Captured</h1>
+            <p class="hero-description">
+                I capture the real you in Paris — not poses, not perfection, just authentic light and genuine emotion. Every frame tells your story.
+            </p>
+            <a href="#contact" class="cta-button">Reserve a Session</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>A Photographer's Perspective</h3>
+                <p>
+                    After five years in Paris, I've learned that the best photographs aren't made—they're discovered. I specialize in finding those fleeting moments when the light hits just right, when the emotion is real, when the composition feels inevitable.
+                </p>
+                <p>
+                    My work bridges the gap between personal diary and professional portfolio. Whether you're traveling solo, celebrating with someone special, or building a brand, I create images that feel both cinematic and timeless.
+                </p>
+
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-title">100+ Photos</div>
+                        <div class="feature-text">Comprehensive coverage. Every angle, every moment.</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">30 Edited</div>
+                        <div class="feature-text">Handpicked, color-graded, and perfected.</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">5 Years</div>
+                        <div class="feature-text">Deep knowledge of Paris light and locations.</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Your Rights</div>
+                        <div class="feature-text">Full usage rights. Use freely, forever.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="portfolio-intro">
+            <h3>Recent Work</h3>
+            <p>A curated selection of recent sessions across Paris. Each collection tells a unique story.</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-item-content">🇫🇷</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Eiffel Tower</p>
+                        <p class="gallery-location">Golden Hour</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-content">🌅</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Seine River</p>
+                        <p class="gallery-location">Sunset Session</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-content">👥</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Couple Story</p>
+                        <p class="gallery-location">Montmartre</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-content">🏙️</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Paris Skyline</p>
+                        <p class="gallery-location">Rooftop Perspective</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-content">🎭</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Street Details</p>
+                        <p class="gallery-location">Marais Quarter</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-content">🌸</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Garden Mood</p>
+                        <p class="gallery-location">Tuileries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Let's Create</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:dada@photography.com" class="contact-value">dada@photography.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Instagram</div>
+                    <a href="https://instagram.com/dada.paris.photos" class="contact-value">@dada.paris.photos</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">WhatsApp</div>
+                    <a href="https://wa.me/33XXXXXXXXX" class="contact-value">+33 X XX XX XX XX</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Rates</div>
+                    <p class="contact-value" style="text-decoration: none;">Starting from €50</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Tell me about your vision..."></textarea>
+                    <button type="submit" class="form-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2026 Dada Photography. Paris, France.</p>
+        <div class="social-links">
+            <a href="https://instagram.com/dada.paris.photos">Instagram</a>
+            <a href="#home">Back to Top</a>
+        </div>
+    </footer>
+</body>
+</html>
