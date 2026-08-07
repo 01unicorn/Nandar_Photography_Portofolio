@@ -279,7 +279,7 @@
             left: 0;
             right: 0;
             padding: 1.5rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.5) 60%, transparent);
             color: white;
             opacity: 0;
             transition: opacity 0.3s;
@@ -542,7 +542,6 @@
                     </div>
                 </div>
             </div>
-
            <img src="images/about-photo.jpg" alt="Nandar Photography" 
      style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; display: block;">
         </div>
@@ -557,7 +556,7 @@
 
         <div class="gallery">
             <div class="gallery-grid">
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/photo1.jpg')" style="cursor: pointer;">
                 <img src="images/photo1.jpg" alt="Eiffel Tower" 
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-label">
@@ -566,7 +565,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/photo2.jpg')" style="cursor: pointer;">
                     <img src="images/photo2.jpg" alt="Seine River" 
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-label">
@@ -575,7 +574,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+               <div class="gallery-item" onclick="openLightbox('images/photo3.jpg')" style="cursor: pointer;">
                      <img src="images/photo3.jpg" alt="Skyline" 
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-label">
@@ -584,7 +583,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/photo4.jpg')" style="cursor: pointer;">
                    <img src="images/photo4.jpg" alt="Street Details" 
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-label">
@@ -593,7 +592,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/photo5.jpg')" style="cursor: pointer;">
                     <img src="images/photo5.jpg" alt="Garden Princess" 
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-label">
@@ -603,7 +602,7 @@
                 </div>
            
             
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openLightbox('images/photo6.jpg')" style="cursor: pointer;">
     <img src="images/photo6.jpg" alt="Cherry Blossom" 
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
     <div class="gallery-label">
@@ -652,5 +651,70 @@
     <footer>
         <p class="footer-text">© 2026 Nandar Photography. Paris, France.</p>
     </footer>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+">
+    <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+        <img id="lightbox-img" src="" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+        <button onclick="closeLightbox()" style="
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 28px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ">×</button>
+    </div>
+</div>
+
+<script>
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close on outside click
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
+
+// Close on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+</script>
+
 </body>
 </html>
