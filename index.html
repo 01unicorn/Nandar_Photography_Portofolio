@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nandar Photography – Cinematic photographer in Paris for fashion, portraits, events and exhibitions. English · Français · 한국어.">
+    <title>Nandar Photography – Paris Photographer | Fashion, Portraits, Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 60px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #999;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: #777;
+            max-width: 600px;
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 1px solid #000;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #000;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 8rem 5%;
+        }
+
+        section h2 {
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #999;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #666;
+        }
+
+        .about-text .lead {
+            color: #1a1a1a;
+        }
+
+        .languages {
+            font-size: 0.9rem !important;
+            letter-spacing: 1.5px;
+            color: #999 !important;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services {
+            background: #fafafa;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem 4rem;
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+        }
+
+        .service-text {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+        }
+
+        /* Portfolio Section */
+        .portfolio-intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .portfolio-intro h3 {
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-intro p {
+            font-size: 1.1rem;
+            color: #777;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .filters button {
+            background: none;
+            border: none;
+            border-bottom: 1px solid transparent;
+            padding: 0.3rem 0;
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .filters button:hover,
+        .filters button.active {
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        /* Gallery */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid #efefef;
+            transition: all 0.4s;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Shown only until the photo file is uploaded */
+        .gallery-item img.missing {
+            display: none;
+        }
+
+        .gallery-item .placeholder {
+            display: none;
+            position: absolute;
+            inset: 0;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: #aaa;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-item img.missing ~ .placeholder {
+            display: flex;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-label {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0;
+            color: #f4e4c1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery-location {
+            font-size: 0.85rem;
+            color: white;
+            margin-top: 0.3rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery-more {
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #fafafa;
+        }
+
+        .contact-intro {
+            max-width: 640px;
+            margin: -1.5rem 0 4rem;
+            font-size: 1.05rem;
+            color: #777;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .contact-value:hover {
+            color: #666;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5%;
+            border-top: 1px solid #efefef;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 5%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            nav {
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-intro {
+                margin-top: -1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">NANDAR</div>
+        <ul>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">Paris · Fashion · Portraits · Events · Exhibitions</div>
+            <h1>Cinematic Moments, Authentically Captured</h1>
+            <p class="hero-description">
+                Real moments, not just poses. From Fashion Week runways to quiet portraits in Paris,
+                every frame carries the mood of a film.
+            </p>
+            <a href="#contact" class="cta-button">Let's Work Together</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>A Photographer's Perspective</h3>
+                <p>
+                    After five years in Paris, I've learned that the best photographs aren't made. They're discovered.
+                </p>
+                <p class="lead">
+                    Every photo I take starts with a feeling: the quiet tension before a runway, a smile you didn't plan,
+                    the atmosphere of a room full of art.
+                </p>
+                <p>
+                    I'm here to capture those real moments and give them the mood of a film.
+                </p>
+                <p class="languages">English · Français · 한국어</p>
+
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-title">Social Reels</div>
+                        <div class="feature-text">Short vertical reels for Instagram &amp; TikTok,<br>
+                            available as an add-on.</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Edited Selection</div>
+                        <div class="feature-text">Colour-graded and retouched.</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">5 Years in Paris</div>
+                        <div class="feature-text">Secret locations and<br>
+                            the city's best spots.</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Paris Fashion Week</div>
+                        <div class="feature-text">Runway and backstage<br>
+                            experience.</div>
+                    </div>
+                </div>
+            </div>
+            <img src="images/about-photo.jpg" alt="Nandar, photographer in Paris"
+                 style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; display: block; background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service">
+                <div class="service-title">Fashion &amp; Runway</div>
+                <p class="service-text">Fashion Week shows, backstage, lookbooks and designer content. Social reels available on request.</p>
+            </div>
+            <div class="service">
+                <div class="service-title">Portraits &amp; Couples</div>
+                <p class="service-text">Solo travellers, couples, proposals and lifestyle sessions in Paris's most beautiful and secret places. Full usage rights for personal use.</p>
+            </div>
+            <div class="service">
+                <div class="service-title">Events</div>
+                <p class="service-text">Launches, charity shows, parties and brand events, in photo and short video.</p>
+            </div>
+            <div class="service">
+                <div class="service-title">Exhibitions &amp; Spaces</div>
+                <p class="service-text">Gallery booths, art fairs, artworks and interiors with true colours and straight lines.</p>
+            </div>
+            <div class="service">
+                <div class="service-title">Sport</div>
+                <p class="service-text">Athletes and competitions: full-speed action and the quiet moments in between.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="portfolio-intro">
+            <h3>Recent Work</h3>
+            <p>A curated selection of recent work across Paris. Each collection tells a unique story.</p>
+        </div>
+
+        <div class="filters">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="fashion">Fashion</button>
+            <button data-filter="portraits">Portraits</button>
+            <button data-filter="events">Events</button>
+            <button data-filter="exhibitions">Exhibitions</button>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-grid">
+                <!-- Fashion: 9 photos (first 3 also show in "All") -->
+                <div class="gallery-item" data-category="fashion" data-featured="true">
+                    <img src="images/fashion1.jpg" alt="Runway – Paris Fashion Week">
+                    <div class="placeholder">images/fashion1.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Runway</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion" data-featured="true">
+                    <img src="images/fashion2.jpg" alt="Bridal Couture – Paris Fashion Week">
+                    <div class="placeholder">images/fashion2.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Bridal Couture</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion" data-featured="true">
+                    <img src="images/fashion3.jpg" alt="Backstage – Paris Fashion Week">
+                    <div class="placeholder">images/fashion3.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Backstage</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion">
+                    <img src="images/fashion4.jpg" alt="The Details – Paris Fashion Week">
+                    <div class="placeholder">images/fashion4.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">The Details</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion">
+                    <img src="images/fashion5.jpg" alt="The Finale – Paris Fashion Week">
+                    <div class="placeholder">images/fashion5.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">The Finale</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion">
+                    <img src="images/fashion6.jpg" alt="Off-Duty – Street Style">
+                    <div class="placeholder">images/fashion6.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Off-Duty</p>
+                        <p class="gallery-location">Street Style</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion">
+                    <img src="images/fashion7.jpg" alt="Runway – Paris Fashion Week">
+                    <div class="placeholder">images/fashion7.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Runway</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion">
+                    <img src="images/fashion8.jpg" alt="Runway – Paris Fashion Week">
+                    <div class="placeholder">images/fashion8.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Runway</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fashion">
+                    <img src="images/fashion9.jpg" alt="Runway – Paris Fashion Week">
+                    <div class="placeholder">images/fashion9.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Runway</p>
+                        <p class="gallery-location">Paris Fashion Week</p>
+                    </div>
+                </div>
+
+                <!-- Portraits: 6 photos -->
+                <div class="gallery-item" data-category="portraits" data-featured="true">
+                    <img src="images/photo1.jpg" alt="Portrait at the Eiffel Tower, golden hour">
+                    <div class="placeholder">images/photo1.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Eiffel Tower</p>
+                        <p class="gallery-location">Golden Hour</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits" data-featured="true">
+                    <img src="images/photo2.jpg" alt="Sunset session by the Seine">
+                    <div class="placeholder">images/photo2.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Seine River</p>
+                        <p class="gallery-location">Sunset Session</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits" data-featured="true">
+                    <img src="images/photo3.jpg" alt="Portrait in the Luxembourg Garden">
+                    <div class="placeholder">images/photo3.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Garden Mood</p>
+                        <p class="gallery-location">Luxembourg</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="images/photo4.jpg" alt="Street photography in Paris">
+                    <div class="placeholder">images/photo4.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Parisian Streets</p>
+                        <p class="gallery-location">Street Photography</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="images/photo5.jpg" alt="Museum photoshoot in Paris">
+                    <div class="placeholder">images/photo5.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">In the Clouds ☁️</p>
+                        <p class="gallery-location">Museum Photoshoot</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="images/photo6.jpg" alt="Portrait among cherry blossoms in a secret Paris garden">
+                    <div class="placeholder">images/photo6.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Lost in the Pink Blossom 🌸</p>
+                        <p class="gallery-location">A Secret Garden in Paris</p>
+                    </div>
+                </div>
+
+                <!-- Events: 6 photos -->
+                <div class="gallery-item" data-category="events" data-featured="true">
+                    <img src="images/event1.jpg" alt="Front Row – Fashion Week Event">
+                    <div class="placeholder">images/event1.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Front Row</p>
+                        <p class="gallery-location">Fashion Week Event</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-featured="true">
+                    <img src="images/event2.jpg" alt="Race Day – Paris-Vincennes">
+                    <div class="placeholder">images/event2.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Race Day</p>
+                        <p class="gallery-location">Paris-Vincennes</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-featured="true">
+                    <img src="images/event3.jpg" alt="Winners' Corner – Paris-Vincennes">
+                    <div class="placeholder">images/event3.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Winners' Corner</p>
+                        <p class="gallery-location">Paris-Vincennes</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="images/event4.jpg" alt="The DJ – After-show">
+                    <div class="placeholder">images/event4.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">The DJ</p>
+                        <p class="gallery-location">After-show</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="images/event5.jpg" alt="Behind the Scenes – Fashion Week">
+                    <div class="placeholder">images/event5.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Behind the Scenes</p>
+                        <p class="gallery-location">Fashion Week</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="images/event6.jpg" alt="The Crowd – Event">
+                    <div class="placeholder">images/event6.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">The Crowd</p>
+                        <p class="gallery-location">Event</p>
+                    </div>
+                </div>
+
+                <!-- Exhibitions: 6 photos -->
+                <div class="gallery-item" data-category="exhibitions" data-featured="true">
+                    <img src="images/exhibition1.jpg" alt="Gallery View – Exhibition">
+                    <div class="placeholder">images/exhibition1.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Gallery View</p>
+                        <p class="gallery-location">Exhibition</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="exhibitions" data-featured="true">
+                    <img src="images/exhibition2.jpg" alt="The Artwork – Exhibition">
+                    <div class="placeholder">images/exhibition2.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">The Artwork</p>
+                        <p class="gallery-location">Exhibition</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="exhibitions" data-featured="true">
+                    <img src="images/exhibition3.jpg" alt="Heritage Interiors – Hôtel de Matignon">
+                    <div class="placeholder">images/exhibition3.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Heritage Interiors</p>
+                        <p class="gallery-location">Hôtel de Matignon</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="exhibitions">
+                    <img src="images/exhibition4.jpg" alt="Le Sénat – Heritage Days">
+                    <div class="placeholder">images/exhibition4.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Le Sénat</p>
+                        <p class="gallery-location">Heritage Days</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="exhibitions">
+                    <img src="images/exhibition5.jpg" alt="Assemblée nationale – Heritage Days">
+                    <div class="placeholder">images/exhibition5.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">Assemblée nationale</p>
+                        <p class="gallery-location">Heritage Days</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="exhibitions">
+                    <img src="images/exhibition6.jpg" alt="The Details – Exhibition">
+                    <div class="placeholder">images/exhibition6.jpg</div>
+                    <div class="gallery-label">
+                        <p class="gallery-title">The Details</p>
+                        <p class="gallery-location">Exhibition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Let's Create</h2>
+        <p class="contact-intro">
+            Tell me the date, location and what you have in mind: a portrait, a show, an event or an exhibition.
+            I usually reply within 24 hours.
+        </p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:nandar.photography99@gmail.com" class="contact-value">nandar.photography99@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Instagram</div>
+                    <a href="https://www.instagram.com/jazdada/" class="contact-value">@jazdada</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Email Me Directly</h4>
+                    <a href="mailto:nandar.photography99@gmail.com?subject=Photography Inquiry&body=Hi Nandar,%0D%0A%0D%0AI'm interested in booking a shoot.%0D%0A%0D%0AType of shoot (portrait, fashion, event, exhibition):%0D%0ADate preference:%0D%0ALocation:%0D%0ANumber of people:%0D%0A%0D%0AThanks!"
+                       style="display: inline-block; padding: 1rem 2rem; background: #000; color: #fff; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border: 1px solid #000; font-weight: 500; cursor: pointer;">
+                        Send Me an Email
+                    </a>
+                </div>
+
+                <div>
+                    <p style="font-size: 0.9rem; color: #999;">Or contact me directly:</p>
+                    <p style="font-size: 1rem; color: #1a1a1a;">nandar.photography99@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2026 Nandar Photography. Paris, France.</p>
+    </footer>
+
+    <script>
+        // Show a soft placeholder until each photo is uploaded
+        document.querySelectorAll('.gallery-item img').forEach(function (img) {
+            function miss() { img.classList.add('missing'); }
+            if (img.complete && img.naturalWidth === 0) miss();
+            img.addEventListener('error', miss);
+        });
+
+        // Category filters ("All" shows the 3 featured photos of each category)
+        document.querySelectorAll('.gallery-item').forEach(function (item) {
+            if (item.dataset.featured !== 'true') item.classList.add('hidden');
+        });
+        var buttons = document.querySelectorAll('.filters button');
+        var items = document.querySelectorAll('.gallery-item');
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                buttons.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var f = btn.dataset.filter;
+                items.forEach(function (item) {
+                    var show = f === 'all' ? item.dataset.featured === 'true' : item.dataset.category === f;
+                    item.classList.toggle('hidden', !show);
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
